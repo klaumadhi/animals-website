@@ -1,14 +1,13 @@
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
+import { useTitle } from "../hooks/useTitle"
 
 
 export const AnimalDetails = ({path}) => {
     // useParams() get the value from id which is in allRoutes like birds/:id
     const params = useParams().id
-
-
-
     const [animal, setAnimal] = useState({})
+    useTitle(`${animal.name}`)
   
    
  useEffect(() => {
